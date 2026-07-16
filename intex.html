@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MasterBuild - Armenian Hardware Store</title>
+    <title>Smile Armenia - Modern Dental Clinic</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+Armenian:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+Armenian:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Roboto', 'Noto Sans Armenian', sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Armenian', sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -25,9 +25,9 @@
             transition: all 0.3s ease;
         }
         .lang-btn.active {
-            background-color: #f97316; /* Orange for construction/tools */
+            background-color: #0ea5e9; /* Sky Blue */
             color: white;
-            border-color: #f97316;
+            border-color: #0ea5e9;
         }
 
         /* Animations */
@@ -40,9 +40,9 @@
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
-        .category-card:hover {
+        .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
         /* Custom Scrollbar */
@@ -50,10 +50,10 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f5f9;
+            background: #f0f9ff;
         }
         ::-webkit-scrollbar-thumb {
-            background: #f97316;
+            background: #0ea5e9;
             border-radius: 4px;
         }
     </style>
@@ -61,33 +61,36 @@
 <body class="bg-slate-50 text-slate-800 overflow-x-hidden">
 
     <!-- Top Bar -->
-    <div class="bg-slate-900 text-slate-300 py-2 text-sm hidden md:block">
+    <div class="bg-sky-900 text-white py-2 text-sm hidden md:block">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex gap-6">
-                <span><i class="fa-solid fa-phone mr-2"></i>+374 10 555 666</span>
-                <span><i class="fa-solid fa-envelope mr-2"></i>info@masterbuild.am</span>
+                <span><i class="fa-solid fa-phone mr-2"></i>+374 10 123 456</span>
+                <span><i class="fa-solid fa-clock mr-2"></i><span data-i18n="topBarHours">Mon-Sat: 9:00 - 20:00</span></span>
             </div>
             <div class="flex gap-4">
-                <span data-i18n="topBarDelivery">Free delivery in Yerevan over 50,000 AMD</span>
+                <a href="#" class="hover:text-sky-300"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-sky-300"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-sky-300"><i class="fa-brands fa-telegram"></i></a>
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo -->
-            <a href="#" class="text-2xl font-bold text-orange-600 flex items-center gap-2">
-                <i class="fa-solid fa-hammer"></i>
-                <span data-i18n="brandName">MasterBuild</span>
+            <a href="#" class="text-2xl font-bold text-sky-600 flex items-center gap-2">
+                <i class="fa-solid fa-tooth"></i>
+                <span data-i18n="brandName">Smile Armenia</span>
             </a>
 
-            <!-- Search Bar (Desktop) -->
-            <div class="hidden lg:flex flex-1 max-w-xl mx-8 relative">
-                <input type="text" placeholder="Search for tools, materials..." class="w-full bg-slate-100 border border-slate-200 rounded-lg py-2 px-4 focus:outline-none focus:border-orange-500" data-i18n-placeholder="searchPlaceholder">
-                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-orange-600 text-white p-1.5 rounded-md hover:bg-orange-700">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8 font-medium text-slate-600">
+                <a href="#home" class="hover:text-sky-600 transition-colors" data-i18n="navHome">Home</a>
+                <a href="#services" class="hover:text-sky-600 transition-colors" data-i18n="navServices">Services</a>
+                <a href="#doctors" class="hover:text-sky-600 transition-colors" data-i18n="navDoctors">Our Team</a>
+                <a href="#reviews" class="hover:text-sky-600 transition-colors" data-i18n="navReviews">Reviews</a>
+                <a href="#contact" class="hover:text-sky-600 transition-colors" data-i18n="navContact">Contact</a>
             </div>
 
             <!-- Right Side Actions -->
@@ -99,9 +102,8 @@
                     <button onclick="changeLanguage('ru')" class="lang-btn px-2 py-1 rounded-md text-xs font-semibold text-slate-600 hover:bg-slate-200" id="btn-ru">RU</button>
                 </div>
 
-                <a href="#" class="relative text-slate-600 hover:text-orange-600">
-                    <i class="fa-solid fa-cart-shopping text-xl"></i>
-                    <span class="absolute -top-2 -right-2 bg-orange-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                <a href="#appointment" class="hidden md:block bg-sky-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-sky-700 transition-colors shadow-lg shadow-sky-600/30" data-i18n="ctaBook">
+                    Book Appointment
                 </a>
 
                 <!-- Mobile Menu Button -->
@@ -111,73 +113,70 @@
             </div>
         </div>
 
-        <!-- Desktop Categories Menu -->
-        <div class="hidden lg:block border-t border-slate-100 bg-white">
-            <div class="container mx-auto px-6 py-3 flex gap-8 text-sm font-medium text-slate-600">
-                <a href="#categories" class="hover:text-orange-600" data-i18n="catTools">Power Tools</a>
-                <a href="#categories" class="hover:text-orange-600" data-i18n="catMaterials">Building Materials</a>
-                <a href="#categories" class="hover:text-orange-600" data-i18n="catPlumbing">Plumbing</a>
-                <a href="#categories" class="hover:text-orange-600" data-i18n="catElectrical">Electrical</a>
-                <a href="#categories" class="hover:text-orange-600" data-i18n="catPaint">Paint & Decor</a>
-            </div>
-        </div>
-
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t absolute w-full left-0 shadow-lg">
             <div class="flex flex-col p-4 space-y-4">
-                <a href="#home" class="block text-slate-600 hover:text-orange-600" data-i18n="navHome">Home</a>
-                <a href="#categories" class="block text-slate-600 hover:text-orange-600" data-i18n="navCategories">Categories</a>
-                <a href="#about" class="block text-slate-600 hover:text-orange-600" data-i18n="navAbout">About Us</a>
-                <a href="#contact" class="block text-slate-600 hover:text-orange-600" data-i18n="navContact">Contact</a>
+                <a href="#home" class="block text-slate-600 hover:text-sky-600" data-i18n="navHome">Home</a>
+                <a href="#services" class="block text-slate-600 hover:text-sky-600" data-i18n="navServices">Services</a>
+                <a href="#doctors" class="block text-slate-600 hover:text-sky-600" data-i18n="navDoctors">Our Team</a>
+                <a href="#contact" class="block text-slate-600 hover:text-sky-600" data-i18n="navContact">Contact</a>
+                <a href="#appointment" class="block bg-sky-600 text-white text-center py-2 rounded-lg" data-i18n="ctaBook">Book Appointment</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative bg-slate-900 text-white py-20 lg:py-32">
-        <div class="absolute inset-0 z-0 opacity-40">
-            <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                 alt="Hardware Store Background" 
-                 class="w-full h-full object-cover">
-        </div>
-
-        <div class="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 mb-10 lg:mb-0 animate-fade-in-up">
-                <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight" data-i18n="heroTitle">
-                    Build Your Dreams <br> With Quality Tools
+    <section id="home" class="relative bg-gradient-to-br from-sky-50 to-white pt-20 pb-32 overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-sky-100/50 rounded-l-[100px] -z-10 hidden lg:block"></div>
+        
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 animate-fade-in-up">
+                <div class="inline-block bg-sky-100 text-sky-700 px-4 py-1 rounded-full text-sm font-semibold mb-6">
+                    <i class="fa-solid fa-star mr-1"></i> <span data-i18n="heroBadge">#1 Rated Clinic in Yerevan</span>
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight" data-i18n="heroTitle">
+                    Your Perfect Smile <br> Starts Here
                 </h1>
-                <p class="text-lg text-slate-300 mb-8 max-w-lg" data-i18n="heroSubtitle">
-                    The largest selection of professional hardware, construction materials, and home improvement supplies in Armenia.
+                <p class="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed" data-i18n="heroSubtitle">
+                    Experience pain-free, modern dental care with our team of international specialists. We use the latest technology to ensure your comfort and health.
                 </p>
-                <div class="flex gap-4">
-                    <a href="#categories" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg" data-i18n="ctaShop">
-                        Shop Now
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#appointment" class="bg-sky-600 hover:bg-sky-700 text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-xl text-center" data-i18n="heroCta1">
+                        Get a Free Consultation
                     </a>
-                    <a href="#contact" class="border border-white hover:bg-white hover:text-slate-900 text-white px-8 py-3 rounded-lg font-semibold transition-colors" data-i18n="ctaContact">
-                        Contact Us
+                    <a href="#services" class="bg-white border border-slate-200 hover:border-sky-600 hover:text-sky-600 text-slate-700 px-8 py-4 rounded-full font-semibold transition-all text-center flex items-center justify-center gap-2" data-i18n="heroCta2">
+                        <i class="fa-solid fa-play"></i> Our Services
                     </a>
                 </div>
-            </div>
-            
-            <!-- Hero Image/Card -->
-            <div class="lg:w-1/2 flex justify-center lg:justify-end animate-fade-in-up" style="animation-delay: 0.2s;">
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 max-w-sm">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="bg-orange-600 p-3 rounded-full">
-                            <i class="fa-solid fa-truck-fast text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold" data-i18n="feat1Title">Fast Delivery</h3>
-                            <p class="text-sm text-slate-300" data-i18n="feat1Desc">Same-day delivery in Yerevan</p>
-                        </div>
+
+                <div class="mt-10 flex items-center gap-8">
+                    <div>
+                        <p class="text-3xl font-bold text-slate-900">15+</p>
+                        <p class="text-sm text-slate-500" data-i18n="statYears">Years Experience</p>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <div class="bg-blue-600 p-3 rounded-full">
-                            <i class="fa-solid fa-shield-halved text-white text-xl"></i>
+                    <div class="w-px h-10 bg-slate-300"></div>
+                    <div>
+                        <p class="text-3xl font-bold text-slate-900">10k+</p>
+                        <p class="text-sm text-slate-500" data-i18n="statPatients">Happy Patients</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 relative animate-fade-in-up" style="animation-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Dental Care" 
+                     class="rounded-3xl shadow-2xl relative z-10 w-full object-cover h-[500px]">
+                
+                <!-- Floating Card -->
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl z-20 max-w-xs hidden md:block">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="bg-green-100 p-3 rounded-full text-green-600">
+                            <i class="fa-solid fa-check-double text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold" data-i18n="feat2Title">Warranty Guaranteed</h3>
-                            <p class="text-sm text-slate-300" data-i18n="feat2Desc">Official warranty on all tools</p>
+                            <h4 class="font-bold text-slate-800" data-i18n="floatCardTitle">Certified Experts</h4>
+                            <p class="text-xs text-slate-500" data-i18n="floatCardDesc">European & US trained doctors</p>
                         </div>
                     </div>
                 </div>
@@ -185,236 +184,216 @@
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories" class="py-20 bg-white">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-800 mb-4" data-i18n="catTitle">Popular Categories</h2>
-                <div class="w-20 h-1 bg-orange-600 mx-auto rounded-full"></div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4" data-i18n="servicesTitle">Comprehensive Dental Care</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto" data-i18n="servicesSubtitle">We offer a full range of dental services to keep your smile healthy and beautiful.</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <!-- Category 1 -->
-                <div class="category-card group cursor-pointer bg-slate-50 rounded-xl p-6 text-center border border-slate-100 hover:border-orange-200 transition-all">
-                    <div class="w-16 h-16 mx-auto bg-orange-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-600 transition-colors">
-                        <i class="fa-solid fa-drill text-orange-600 text-2xl group-hover:text-white"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-slate-50 p-8 rounded-2xl border border-slate-100 transition-all cursor-pointer group">
+                    <div class="w-14 h-14 bg-sky-100 rounded-xl flex items-center justify-center text-sky-600 text-2xl mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700" data-i18n="catTools">Power Tools</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="serv1Title">Cosmetic Dentistry</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="serv1Desc">Teeth whitening, veneers, and bonding to give you the perfect Hollywood smile.</p>
+                    <a href="#" class="text-sky-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                        <span data-i18n="learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <!-- Category 2 -->
-                <div class="category-card group cursor-pointer bg-slate-50 rounded-xl p-6 text-center border border-slate-100 hover:border-orange-200 transition-all">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
-                        <i class="fa-solid fa-trowel-bricks text-blue-600 text-2xl group-hover:text-white"></i>
+                <!-- Service 2 -->
+                <div class="service-card bg-slate-50 p-8 rounded-2xl border border-slate-100 transition-all cursor-pointer group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-teeth-open"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700" data-i18n="catMaterials">Materials</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="serv2Title">Orthodontics</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="serv2Desc">Invisible aligners and traditional braces for children and adults.</p>
+                    <a href="#" class="text-purple-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                        <span data-i18n="learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <!-- Category 3 -->
-                <div class="category-card group cursor-pointer bg-slate-50 rounded-xl p-6 text-center border border-slate-100 hover:border-orange-200 transition-all">
-                    <div class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
-                        <i class="fa-solid fa-faucet text-green-600 text-2xl group-hover:text-white"></i>
+                <!-- Service 3 -->
+                <div class="service-card bg-slate-50 p-8 rounded-2xl border border-slate-100 transition-all cursor-pointer group">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-2xl mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-shield-heart"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700" data-i18n="catPlumbing">Plumbing</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="serv3Title">Implantology</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="serv3Desc">High-quality titanium implants that look and feel like natural teeth.</p>
+                    <a href="#" class="text-green-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                        <span data-i18n="learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <!-- Category 4 -->
-                <div class="category-card group cursor-pointer bg-slate-50 rounded-xl p-6 text-center border border-slate-100 hover:border-orange-200 transition-all">
-                    <div class="w-16 h-16 mx-auto bg-yellow-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-600 transition-colors">
-                        <i class="fa-solid fa-bolt text-yellow-600 text-2xl group-hover:text-white"></i>
+                <!-- Service 4 -->
+                <div class="service-card bg-slate-50 p-8 rounded-2xl border border-slate-100 transition-all cursor-pointer group">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-child-reaching"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700" data-i18n="catElectrical">Electrical</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="serv4Title">Pediatric Dentistry</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="serv4Desc">Gentle care for your little ones in a fun and friendly environment.</p>
+                    <a href="#" class="text-orange-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                        <span data-i18n="learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <!-- Category 5 -->
-                <div class="category-card group cursor-pointer bg-slate-50 rounded-xl p-6 text-center border border-slate-100 hover:border-orange-200 transition-all">
-                    <div class="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-600 transition-colors">
-                        <i class="fa-solid fa-paint-roller text-purple-600 text-2xl group-hover:text-white"></i>
+                <!-- Service 5 -->
+                <div class="service-card bg-slate-50 p-8 rounded-2xl border border-slate-100 transition-all cursor-pointer group">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-kit-medical"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700" data-i18n="catPaint">Paint</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="serv5Title">Emergency Care</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="serv5Desc">Immediate assistance for toothaches, accidents, and urgent dental issues.</p>
+                    <a href="#" class="text-red-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                        <span data-i18n="learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <!-- Category 6 -->
-                <div class="category-card group cursor-pointer bg-slate-50 rounded-xl p-6 text-center border border-slate-100 hover:border-orange-200 transition-all">
-                    <div class="w-16 h-16 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-600 transition-colors">
-                        <i class="fa-solid fa-seedling text-red-600 text-2xl group-hover:text-white"></i>
+                <!-- Service 6 -->
+                <div class="service-card bg-slate-50 p-8 rounded-2xl border border-slate-100 transition-all cursor-pointer group">
+                    <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-x-ray"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700" data-i18n="catGarden">Garden</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-10">
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-800 mb-2" data-i18n="prodTitle">Best Sellers</h2>
-                    <p class="text-slate-500" data-i18n="prodSubtitle">Top-rated products by our customers.</p>
-                </div>
-                <a href="#" class="text-orange-600 font-semibold hover:underline hidden md:block" data-i18n="viewAll">View All Products</a>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Product 1 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
-                    <div class="relative h-48 bg-gray-100 p-4 flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Drill" class="max-h-full object-contain group-hover:scale-110 transition-transform">
-                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">-15%</span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-800 mb-1 truncate">Bosch Professional Drill</h3>
-                        <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                            <span class="text-slate-400 ml-1">(45)</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-slate-400 line-through text-sm">45,000 AMD</span>
-                                <p class="text-orange-600 font-bold text-lg">38,250 AMD</p>
-                            </div>
-                            <button class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
-                    <div class="relative h-48 bg-gray-100 p-4 flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tool Set" class="max-h-full object-contain group-hover:scale-110 transition-transform">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-800 mb-1 truncate">120-Piece Tool Set</h3>
-                        <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span class="text-slate-400 ml-1">(120)</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <p class="text-orange-600 font-bold text-lg">22,000 AMD</p>
-                            <button class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
-                    <div class="relative h-48 bg-gray-100 p-4 flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Paint" class="max-h-full object-contain group-hover:scale-110 transition-transform">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-800 mb-1 truncate">Premium Interior Paint</h3>
-                        <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <span class="text-slate-400 ml-1">(28)</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <p class="text-orange-600 font-bold text-lg">12,500 AMD</p>
-                            <button class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
-                    <div class="relative h-48 bg-gray-100 p-4 flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Safety Helmet" class="max-h-full object-contain group-hover:scale-110 transition-transform">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-800 mb-1 truncate">Industrial Safety Helmet</h3>
-                        <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span class="text-slate-400 ml-1">(85)</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <p class="text-orange-600 font-bold text-lg">5,500 AMD</p>
-                            <button class="bg-slate-900 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="serv6Title">Digital Diagnostics</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="serv6Desc">3D scanning and X-rays for precise diagnosis and treatment planning.</p>
+                    <a href="#" class="text-teal-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                        <span data-i18n="learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About / Services -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="bg-slate-900 rounded-2xl overflow-hidden flex flex-col lg:flex-row">
-                <div class="lg:w-1/2 p-10 lg:p-16 text-white flex flex-col justify-center">
-                    <h2 class="text-3xl font-bold mb-6" data-i18n="whyTitle">Why Choose MasterBuild?</h2>
+    <!-- Why Choose Us / Features -->
+    <section class="py-20 bg-sky-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/medical-icons.png')]"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6" data-i18n="whyTitle">Why Patients Trust Us</h2>
+                    <p class="text-sky-100 mb-8 leading-relaxed" data-i18n="whySubtitle">
+                        We combine advanced technology with a compassionate approach to ensure every visit is comfortable and effective.
+                    </p>
+                    
                     <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="bg-orange-600 p-3 rounded-lg shrink-0">
-                                <i class="fa-solid fa-award text-xl"></i>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white/10 p-3 rounded-lg shrink-0">
+                                <i class="fa-solid fa-user-doctor text-xl text-sky-300"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg" data-i18n="why1Title">Original Brands</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="why1Desc">We are official distributors of Bosch, Makita, and DeWalt in Armenia.</p>
+                                <h4 class="font-bold text-lg" data-i18n="feat1Title">International Standards</h4>
+                                <p class="text-sky-200 text-sm" data-i18n="feat1Desc">Sterilization and safety protocols matching EU standards.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="bg-orange-600 p-3 rounded-lg shrink-0">
-                                <i class="fa-solid fa-users-gear text-xl"></i>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white/10 p-3 rounded-lg shrink-0">
+                                <i class="fa-solid fa-hand-holding-dollar text-xl text-sky-300"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg" data-i18n="why2Title">Expert Advice</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="why2Desc">Our staff consists of professional engineers ready to help you choose.</p>
+                                <h4 class="font-bold text-lg" data-i18n="feat2Title">Transparent Pricing</h4>
+                                <p class="text-sky-200 text-sm" data-i18n="feat2Desc">No hidden fees. We provide a detailed cost plan before treatment.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="bg-orange-600 p-3 rounded-lg shrink-0">
-                                <i class="fa-solid fa-hand-holding-dollar text-xl"></i>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white/10 p-3 rounded-lg shrink-0">
+                                <i class="fa-solid fa-couch text-xl text-sky-300"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg" data-i18n="why3Title">Best Prices</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="why3Desc">Competitive pricing for both retail and wholesale customers.</p>
+                                <h4 class="font-bold text-lg" data-i18n="feat3Title">Comfortable Atmosphere</h4>
+                                <p class="text-sky-200 text-sm" data-i18n="feat3Desc">Relax in our modern lounge with coffee and Wi-Fi while you wait.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="lg:w-1/2 h-64 lg:h-auto relative">
-                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Store Interior" class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="rounded-2xl shadow-lg transform translate-y-8">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 p-10 lg:p-16 bg-sky-600 text-white flex flex-col justify-center">
+                    <h2 class="text-3xl font-bold mb-4" data-i18n="appTitle">Book Your Visit</h2>
+                    <p class="text-sky-100 mb-8" data-i18n="appSubtitle">Fill out the form and our coordinator will contact you within 15 minutes to confirm your appointment.</p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-sky-300"></i>
+                            <span data-i18n="appFeat1">Free initial consultation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-sky-300"></i>
+                            <span data-i18n="appFeat2">Flexible payment plans</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-sky-300"></i>
+                            <span data-i18n="appFeat3">English & Russian speaking staff</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="lg:w-1/2 p-10 lg:p-16">
+                    <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="formName">Full Name</label>
+                                <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="formPhone">Phone Number</label>
+                                <input type="tel" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="formService">Interested Service</label>
+                            <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                <option data-i18n="optGeneral">General Checkup</option>
+                                <option data-i18n="optCleaning">Cleaning & Whitening</option>
+                                <option data-i18n="optImplant">Implants</option>
+                                <option data-i18n="optBraces">Braces/Aligners</option>
+                                <option data-i18n="optOther">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="formMessage">Message (Optional)</label>
+                            <textarea rows="3" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-slate-800 transition-colors shadow-lg" data-i18n="formSubmit">
+                            Request Appointment
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <footer id="contact" class="bg-slate-900 text-slate-300 pt-16 pb-8">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Brand -->
                 <div>
                     <a href="#" class="text-2xl font-bold text-white flex items-center gap-2 mb-4">
-                        <i class="fa-solid fa-hammer text-orange-600"></i>
-                        <span data-i18n="brandName">MasterBuild</span>
+                        <i class="fa-solid fa-tooth text-sky-500"></i>
+                        <span data-i18n="brandName">Smile Armenia</span>
                     </a>
                     <p class="text-sm leading-relaxed opacity-80 mb-6" data-i18n="footerDesc">
-                        Your trusted partner for construction and renovation in Armenia since 2010.
+                        Leading dental clinic in Yerevan providing world-class care with a personal touch.
                     </p>
                 </div>
 
@@ -422,28 +401,28 @@
                 <div>
                     <h4 class="text-white font-bold mb-4" data-i18n="footerLinks">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-orange-500 transition-colors" data-i18n="navHome">Home</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors" data-i18n="navCategories">Categories</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors" data-i18n="navAbout">About Us</a></li>
-                        <li><a href="#" class="hover:text-orange-500 transition-colors" data-i18n="footerPrivacy">Privacy Policy</a></li>
+                        <li><a href="#home" class="hover:text-sky-500 transition-colors" data-i18n="navHome">Home</a></li>
+                        <li><a href="#services" class="hover:text-sky-500 transition-colors" data-i18n="navServices">Services</a></li>
+                        <li><a href="#doctors" class="hover:text-sky-500 transition-colors" data-i18n="navDoctors">Our Team</a></li>
+                        <li><a href="#" class="hover:text-sky-500 transition-colors" data-i18n="footerPrivacy">Privacy Policy</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div>
-                    <h4 class="text-white font-bold mb-4" data-i18n="footerContact">Contact Info</h4>
+                    <h4 class="text-white font-bold mb-4" data-i18n="footerContact">Contact Us</h4>
                     <ul class="space-y-3 text-sm">
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-orange-600 mt-1"></i>
-                            <span>15 Tigran Mets Ave, Yerevan, Armenia</span>
+                            <i class="fa-solid fa-location-dot text-sky-500 mt-1"></i>
+                            <span>25 Vazgen Sargsyan St, Yerevan, Armenia</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-orange-600"></i>
-                            <span>+374 10 555 666</span>
+                            <i class="fa-solid fa-phone text-sky-500"></i>
+                            <span>+374 10 123 456</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-orange-600"></i>
-                            <span>sales@masterbuild.am</span>
+                            <i class="fa-solid fa-envelope text-sky-500"></i>
+                            <span>info@smilearmenia.am</span>
                         </li>
                     </ul>
                 </div>
@@ -453,23 +432,27 @@
                     <h4 class="text-white font-bold mb-4" data-i18n="footerHours">Working Hours</h4>
                     <ul class="space-y-2 text-sm">
                         <li class="flex justify-between">
-                            <span data-i18n="weekdays">Mon - Sat</span>
+                            <span data-i18n="weekdays">Mon - Fri</span>
                             <span>9:00 - 20:00</span>
                         </li>
                         <li class="flex justify-between">
-                            <span data-i18n="sunday">Sunday</span>
+                            <span data-i18n="saturday">Saturday</span>
                             <span>10:00 - 18:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span data-i18n="sunday">Sunday</span>
+                            <span class="text-red-400" data-i18n="closed">Closed</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60">
-                <p>&copy; 2026 MasterBuild. <span data-i18n="footerRights">All rights reserved.</span></p>
+                <p>&copy; 2026 Smile Armenia. <span data-i18n="footerRights">All rights reserved.</span></p>
                 <div class="flex gap-4">
                     <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
@@ -480,129 +463,204 @@
         // Translation Data
         const translations = {
             en: {
-                brandName: "MasterBuild",
-                topBarDelivery: "Free delivery in Yerevan over 50,000 AMD",
-                searchPlaceholder: "Search for tools, materials...",
+                brandName: "Smile Armenia",
+                topBarHours: "Mon-Sat: 9:00 - 20:00",
                 navHome: "Home",
-                navCategories: "Categories",
-                navAbout: "About Us",
+                navServices: "Services",
+                navDoctors: "Our Team",
+                navReviews: "Reviews",
                 navContact: "Contact",
-                catTools: "Power Tools",
-                catMaterials: "Building Materials",
-                catPlumbing: "Plumbing",
-                catElectrical: "Electrical",
-                catPaint: "Paint & Decor",
-                catGarden: "Garden",
-                heroTitle: "Build Your Dreams <br> With Quality Tools",
-                heroSubtitle: "The largest selection of professional hardware, construction materials, and home improvement supplies in Armenia.",
-                ctaShop: "Shop Now",
-                ctaContact: "Contact Us",
-                feat1Title: "Fast Delivery",
-                feat1Desc: "Same-day delivery in Yerevan",
-                feat2Title: "Warranty Guaranteed",
-                feat2Desc: "Official warranty on all tools",
-                catTitle: "Popular Categories",
-                prodTitle: "Best Sellers",
-                prodSubtitle: "Top-rated products by our customers.",
-                viewAll: "View All Products",
-                whyTitle: "Why Choose MasterBuild?",
-                why1Title: "Original Brands",
-                why1Desc: "We are official distributors of Bosch, Makita, and DeWalt in Armenia.",
-                why2Title: "Expert Advice",
-                why2Desc: "Our staff consists of professional engineers ready to help you choose.",
-                why3Title: "Best Prices",
-                why3Desc: "Competitive pricing for both retail and wholesale customers.",
-                footerDesc: "Your trusted partner for construction and renovation in Armenia since 2010.",
+                ctaBook: "Book Appointment",
+                heroBadge: "#1 Rated Clinic in Yerevan",
+                heroTitle: "Your Perfect Smile <br> Starts Here",
+                heroSubtitle: "Experience pain-free, modern dental care with our team of international specialists. We use the latest technology to ensure your comfort and health.",
+                heroCta1: "Get a Free Consultation",
+                heroCta2: "Our Services",
+                statYears: "Years Experience",
+                statPatients: "Happy Patients",
+                floatCardTitle: "Certified Experts",
+                floatCardDesc: "European & US trained doctors",
+                servicesTitle: "Comprehensive Dental Care",
+                servicesSubtitle: "We offer a full range of dental services to keep your smile healthy and beautiful.",
+                serv1Title: "Cosmetic Dentistry",
+                serv1Desc: "Teeth whitening, veneers, and bonding to give you the perfect Hollywood smile.",
+                serv2Title: "Orthodontics",
+                serv2Desc: "Invisible aligners and traditional braces for children and adults.",
+                serv3Title: "Implantology",
+                serv3Desc: "High-quality titanium implants that look and feel like natural teeth.",
+                serv4Title: "Pediatric Dentistry",
+                serv4Desc: "Gentle care for your little ones in a fun and friendly environment.",
+                serv5Title: "Emergency Care",
+                serv5Desc: "Immediate assistance for toothaches, accidents, and urgent dental issues.",
+                serv6Title: "Digital Diagnostics",
+                serv6Desc: "3D scanning and X-rays for precise diagnosis and treatment planning.",
+                learnMore: "Learn More",
+                whyTitle: "Why Patients Trust Us",
+                whySubtitle: "We combine advanced technology with a compassionate approach to ensure every visit is comfortable and effective.",
+                feat1Title: "International Standards",
+                feat1Desc: "Sterilization and safety protocols matching EU standards.",
+                feat2Title: "Transparent Pricing",
+                feat2Desc: "No hidden fees. We provide a detailed cost plan before treatment.",
+                feat3Title: "Comfortable Atmosphere",
+                feat3Desc: "Relax in our modern lounge with coffee and Wi-Fi while you wait.",
+                appTitle: "Book Your Visit",
+                appSubtitle: "Fill out the form and our coordinator will contact you within 15 minutes to confirm your appointment.",
+                appFeat1: "Free initial consultation",
+                appFeat2: "Flexible payment plans",
+                appFeat3: "English & Russian speaking staff",
+                formName: "Full Name",
+                formPhone: "Phone Number",
+                formService: "Interested Service",
+                formMessage: "Message (Optional)",
+                optGeneral: "General Checkup",
+                optCleaning: "Cleaning & Whitening",
+                optImplant: "Implants",
+                optBraces: "Braces/Aligners",
+                optOther: "Other",
+                formSubmit: "Request Appointment",
+                footerDesc: "Leading dental clinic in Yerevan providing world-class care with a personal touch.",
                 footerLinks: "Quick Links",
                 footerPrivacy: "Privacy Policy",
-                footerContact: "Contact Info",
+                footerContact: "Contact Us",
                 footerHours: "Working Hours",
-                weekdays: "Mon - Sat",
+                weekdays: "Mon - Fri",
+                saturday: "Saturday",
                 sunday: "Sunday",
+                closed: "Closed",
                 footerRights: "All rights reserved."
             },
             hy: {
-                brandName: "MasterBuild",
-                topBarDelivery: "Անվճար առաքում Երևանում 50,000 դրամից բարձր պատվերների համար",
-                searchPlaceholder: "Փնտրել գործիքներ, նյութեր...",
+                brandName: "Smile Armenia",
+                topBarHours: "Երկ-Շաբ: 9:00 - 20:00",
                 navHome: "Գլխավոր",
-                navCategories: "Կատեգորիաներ",
-                navAbout: "Մեր Մասին",
+                navServices: "Ծառայություններ",
+                navDoctors: "Մեր Թիմը",
+                navReviews: "Արձագանքներ",
                 navContact: "Կապ",
-                catTools: "Էլեկտրագործիքներ",
-                catMaterials: "Շինանյութեր",
-                catPlumbing: "Ջրմուղ",
-                catElectrical: "Էլեկտրականություն",
-                catPaint: "Ներկ և Դեկոր",
-                catGarden: "Այգի",
-                heroTitle: "Կառուցեք Ձեր Երազանքները <br> Որակյալ Գործիքներով",
-                heroSubtitle: "Հայաստանում պրոֆեսիոնալ սարքավորումների, շինանյութերի և տան բարելավման պարագաների ամենամեծ ընտրությունը։",
-                ctaShop: "Գնել Հիմա",
-                ctaContact: "Կապ մեզ հետ",
-                feat1Title: "Արագ Առաքում",
-                feat1Desc: "Նույն օրվա առաքում Երևանում",
-                feat2Title: "Երաշխիք",
-                feat2Desc: "Պաշտոնական երաշխիք բոլոր գործիքների համար",
-                catTitle: "Հայտնի Կատեգորիաներ",
-                prodTitle: "Լավագույն Վաճառքներ",
-                prodSubtitle: "Մեր հաճախորդների կողմից բարձր գնահատված ապրանքներ։",
-                viewAll: "Դիտել Բոլոր Ապրանքները",
-                whyTitle: "Ինչու՞ Ընտրել MasterBuild-ը",
-                why1Title: "Բրենդային Ապրանքներ",
-                why1Desc: "Մենք Bosch-ի, Makita-ի և DeWalt-ի պաշտոնական դիստրիբյուտորներն ենք Հայաստանում։",
-                why2Title: "Մասնագիտական Խորհուրդներ",
-                why2Desc: "Մեր անձնակազմը բաղկացած է պրոֆեսիոնալ ինժեներներից, ովքեր պատրաստ են օգնել Ձեզ ընտրության հարցում։",
-                why3Title: "Լավագույն Գներ",
-                why3Desc: "Մրցունակ գներ ինչպես մանրածախ, այնպես էլ մեծածախ գնորդների համար։",
-                footerDesc: "Ձեր վստահելի գործընկերը շինարարության և վերանորոգման հարցերում Հայաստանում 2010-ից։",
+                ctaBook: "Գրանցվել",
+                heroBadge: "Երևանի #1 Կլինիկան",
+                heroTitle: "Ձեր Կատարյալ Ժպիտը <br> Սկսվում է Այստեղ",
+                heroSubtitle: "Վայելեք անցավ, ժամանակակից ատամնաբուժական խնամք միջազգային մասնագետների մեր թիմի հետ։ Մենք օգտագործում ենք վերջին տեխնոլոգիաները ձեր հարմարավետությունն ու առողջությունն ապահովելու համար։",
+                heroCta1: "Ստանալ Անվճար Խորհրդատվություն",
+                heroCta2: "Մեր Ծառայությունները",
+                statYears: "Տարվա Փորձ",
+                statPatients: "Երջանիկ Հիվանդներ",
+                floatCardTitle: "Հավաստագրված Փորձագետներ",
+                floatCardDesc: "Եվրոպական և ԱՄՆ-ում սովորած բժիշկներ",
+                servicesTitle: "Համապարփակ Ատամնաբուժություն",
+                servicesSubtitle: "Մենք առաջարկում ենք ատամնաբուժական ծառայությունների լայն շրջանակ ձեր ժպիտը առողջ և գեղեցիկ պահելու համար։",
+                serv1Title: "Գեղագիտական Ատամնաբուժություն",
+                serv1Desc: "Ատամների սպիտակեցում, վինիրներ և կապում՝ ձեզ կատարյալ հոլիվուդյան ժպիտ պարգևելու համար։",
+                serv2Title: "Օրթոդոնտիա",
+                serv2Desc: "Անտեսանելի էլայներներ և ավանդական բրեկետներ երեխաների և մեծահասակների համար։",
+                serv3Title: "Իմպլանտաբանություն",
+                serv3Desc: "Բարձրորակ տիտանե իմպլանտներ, որոնք տեսքով և զգացողությամբ նման են բնական ատամներին։",
+                serv4Title: "Մանկական Ատամնաբուժություն",
+                serv4Desc: "Նուրբ խնամք ձեր փոքրիկների համար զվարճալի և բարեկամական միջավայրում։",
+                serv5Title: "Շտապ Օգնություն",
+                serv5Desc: "Անհապաղ օգնություն ատամնացավի, վնասվածքների և շտապ ատամնաբուժական խնդիրների դեպքում։",
+                serv6Title: "Թվային Ախտորոշում",
+                serv6Desc: "3D սկանավորում և ռենտգեն ճշգրիտ ախտորոշման և բուժման պլանավորման համար։",
+                learnMore: "Իմանալ Ավելին",
+                whyTitle: "Ինչու՞ Հիվանդները Վստահում Մեզ",
+                whySubtitle: "Մենք համատեղում ենք առաջադեմ տեխնոլոգիաները կարեկցանքի մոտեցման հետ՝ ապահովելու, որ յուրաքանչյուր այց հարմարավետ և արդյունավետ լինի։",
+                feat1Title: "Միջազգային Չափանիշներ",
+                feat1Desc: "Ստերիլիզացման և անվտանգության արձանագրություններ, որոնք համապատասխանում են ԵՄ չափանիշներին։",
+                feat2Title: "Թափանցիկ Գնագոյացում",
+                feat2Desc: "Ոչ մի թաքնված վճար։ Մենք մանրամասն ծախսերի պլան ենք տրամադրում բուժումից առաջ։",
+                feat3Title: "Հարմարավետ Մթնոլորտ",
+                feat3Desc: "Հանգստացեք մեր ժամանակակից սրահում սուրճով և Wi-Fi-ով սպասելիս։",
+                appTitle: "Գրանցվել Այցի Համար",
+                appSubtitle: "Լրացրեք ձևը և մեր կոորդինատորը կկապնվի ձեզ հետ 15 րոպեի ընթացքում հանդիպումը հաստատելու համար։",
+                appFeat1: "Անվճար նախնական խորհրդատվություն",
+                appFeat2: "Վճարման ճկուն պլաններ",
+                appFeat3: "Անգլերեն և ռուսերեն խոսող անձնակազմ",
+                formName: "Անուն Ազգանուն",
+                formPhone: "Հեռախոսահամար",
+                formService: "Հետաքրքրող Ծառայություն",
+                formMessage: "Հաղորդագրություն (Ըստ ցանկության)",
+                optGeneral: "Ընդհանուր զննում",
+                optCleaning: "Մաքրում և սպիտակեցում",
+                optImplant: "Իմպլանտներ",
+                optBraces: "Բրեկետներ/էլայներներ",
+                optOther: "Այլ",
+                formSubmit: "Պատվիրել Հանդիպում",
+                footerDesc: "Երևանի առաջատար ատամնաբուժական կլինիկան, որը տրամադրում է համաշխարհային մակարդակի խնամք անհատական մոտեցմամբ։",
                 footerLinks: "Արագ հղումներ",
                 footerPrivacy: "Գաղտնիության քաղաքականություն",
-                footerContact: "Կապի տվյալներ",
+                footerContact: "Կապ մեզ հետ",
                 footerHours: "Աշխատանքային ժամեր",
-                weekdays: "Երկ - Շաբ",
+                weekdays: "Երկ - Ուրբ",
+                saturday: "Շաբաթ",
                 sunday: "Կիրակի",
+                closed: "Փակ է",
                 footerRights: "Բոլոր իրավունքները պաշտպանված են։"
             },
             ru: {
-                brandName: "MasterBuild",
-                topBarDelivery: "Бесплатная доставка в Ереване при заказе от 50,000 драм",
-                searchPlaceholder: "Поиск инструментов, материалов...",
+                brandName: "Smile Armenia",
+                topBarHours: "Пн-Сб: 9:00 - 20:00",
                 navHome: "Главная",
-                navCategories: "Категории",
-                navAbout: "О нас",
+                navServices: "Услуги",
+                navDoctors: "Наша Команда",
+                navReviews: "Отзывы",
                 navContact: "Контакты",
-                catTools: "Электроинструменты",
-                catMaterials: "Стройматериалы",
-                catPlumbing: "Сантехника",
-                catElectrical: "Электрика",
-                catPaint: "Краски и Декор",
-                catGarden: "Сад",
-                heroTitle: "Стройте Свои Мечты <br> С Качественными Инструментами",
-                heroSubtitle: "Самый большой выбор профессионального оборудования, строительных материалов и товаров для дома в Армении.",
-                ctaShop: "Купить Сейчас",
-                ctaContact: "Связаться с нами",
-                feat1Title: "Быстрая Доставка",
-                feat1Desc: "Доставка в день заказа в Ереване",
-                feat2Title: "Гарантия",
-                feat2Desc: "Официальная гарантия на все инструменты",
-                catTitle: "Популярные Категории",
-                prodTitle: "Лидеры Продаж",
-                prodSubtitle: "Товары с highest рейтингом от наших клиентов.",
-                viewAll: "Смотреть Все Товары",
-                whyTitle: "Почему Выбирают MasterBuild?",
-                why1Title: "Оригинальные Бренды",
-                why1Desc: "Мы официальные дистрибьюторы Bosch, Makita и DeWalt в Армении.",
-                why2Title: "Экспертные Консультации",
-                why2Desc: "Наш персонал состоит из профессиональных инженеров, готовых помочь вам с выбором.",
-                why3Title: "Лучшие Цены",
-                why3Desc: "Конкурентные цены как для розничных, так и для оптовых покупателей.",
-                footerDesc: "Ваш надежный партнер в строительстве и ремонте в Армении с 2010 года.",
+                ctaBook: "Записаться",
+                heroBadge: "Клиника №1 в Ереване",
+                heroTitle: "Ваша Идеальная Улыбка <br> Начинается Здесь",
+                heroSubtitle: "Испытайте безболезненный, современный стоматологический уход с нашей командой международных специалистов. Мы используем новейшие технологии для обеспечения вашего комфорта и здоровья.",
+                heroCta1: "Получить Бесплатную Консультацию",
+                heroCta2: "Наши Услуги",
+                statYears: "Лет Опыта",
+                statPatients: "Довольных Пациентов",
+                floatCardTitle: "Сертифицированные Эксперты",
+                floatCardDesc: "Врачи, обученные в Европе и США",
+                servicesTitle: "Комплексная Стоматология",
+                servicesSubtitle: "Мы предлагаем полный спектр стоматологических услуг, чтобы ваша улыбка оставалась здоровой и красивой.",
+                serv1Title: "Эстетическая Стоматология",
+                serv1Desc: "Отбеливание зубов, виниры и реставрация для идеальной голливудской улыбки.",
+                serv2Title: "Ортодонтия",
+                serv2Desc: "Невидимые элайнеры и традиционные брекеты для детей и взрослых.",
+                serv3Title: "Имплантология",
+                serv3Desc: "Высококачественные титановые имплантаты, которые выглядят и ощущаются как натуральные зубы.",
+                serv4Title: "Детская Стоматология",
+                serv4Desc: "Бережный уход за вашими малышами в веселой и дружелюбной обстановке.",
+                serv5Title: "Экстренная Помощь",
+                serv5Desc: "Немедленная помощь при зубной боли, травмах и срочных стоматологических проблемах.",
+                serv6Title: "Цифровая Диагностика",
+                serv6Desc: "3D-сканирование и рентген для точной диагностики и планирования лечения.",
+                learnMore: "Подробнее",
+                whyTitle: "Почему Пациенты Нам Доверяют",
+                whySubtitle: "Мы сочетаем передовые технологии с сострадательным подходом, чтобы каждый визит был комфортным и эффективным.",
+                feat1Title: "Международные Стандарты",
+                feat1Desc: "Протоколы стерилизации и безопасности, соответствующие стандартам ЕС.",
+                feat2Title: "Прозрачное Ценообразование",
+                feat2Desc: "Никаких скрытых платежей. Мы предоставляем подробный план затрат перед лечением.",
+                feat3Title: "Комфортная Атмосфера",
+                feat3Desc: "Расслабьтесь в нашем современном лаундже с кофе и Wi-Fi во время ожидания.",
+                appTitle: "Записаться на Прием",
+                appSubtitle: "Заполните форму, и наш координатор свяжется с вами в течение 15 минут для подтверждения записи.",
+                appFeat1: "Бесплатная первичная консультация",
+                appFeat2: "Гибкие планы оплаты",
+                appFeat3: "Персонал, говорящий на английском и русском",
+                formName: "ФИО",
+                formPhone: "Номер Телефона",
+                formService: "Интересующая Услуга",
+                formMessage: "Сообщение (Необязательно)",
+                optGeneral: "Общий осмотр",
+                optCleaning: "Чистка и отбеливание",
+                optImplant: "Импланты",
+                optBraces: "Брекеты/Элайнеры",
+                optOther: "Другое",
+                formSubmit: "Записаться",
+                footerDesc: "Ведущая стоматологическая клиника в Ереване, предоставляющая уход мирового класса с индивидуальным подходом.",
                 footerLinks: "Быстрые Ссылки",
                 footerPrivacy: "Политика Конфиденциальности",
-                footerContact: "Контактная Информация",
+                footerContact: "Свяжитесь с Нами",
                 footerHours: "Часы Работы",
-                weekdays: "Пн - Сб",
+                weekdays: "Пн - Пт",
+                saturday: "Суббота",
                 sunday: "Воскресенье",
+                closed: "Закрыто",
                 footerRights: "Все права защищены."
             }
         };
@@ -626,14 +684,6 @@
                     } else {
                         element.textContent = translations[lang][key];
                     }
-                }
-            });
-
-            // Update Placeholders
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-                const key = element.getAttribute('data-i18n-placeholder');
-                if (translations[lang][key]) {
-                    element.placeholder = translations[lang][key];
                 }
             });
 
